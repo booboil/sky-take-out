@@ -72,7 +72,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     }
 
     /**
-     * 扩展spring MVC的消息转换器
+     * 扩展spring MVC的消息转换器 （对时间进行处理）
      * @param converters
      */
     @Override
