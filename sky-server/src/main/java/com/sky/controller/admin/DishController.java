@@ -44,7 +44,7 @@ public class DishController {
         return Result.success(pageResult);
     }
 
-    @GetMapping("/delete")
+    @DeleteMapping
     @ApiOperation("菜品批量删除")
     public Result delete(@RequestParam List<Long> ids) { // @RequestParam注解动态解析字符串
         log.info("菜品分页查询:{}",ids);
