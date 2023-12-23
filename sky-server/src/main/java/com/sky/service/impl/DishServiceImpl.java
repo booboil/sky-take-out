@@ -19,6 +19,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Service
@@ -75,6 +77,7 @@ public class DishServiceImpl implements DishService {
      * 菜品批量删除
      * @param ids
      */
+    @Transactional
     @Override
     public void deleteBatch(List<Long> ids) {
         //判断当前商品是否能够删除--是否存在其手中的菜品
