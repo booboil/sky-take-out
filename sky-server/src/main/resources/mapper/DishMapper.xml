@@ -8,6 +8,12 @@
         insert into dish (name,category_id,price,image,description,create_time,create_user,update_time,update_user,status)
         values (#{name},#{categoryId},#{price},#{image},#{description},#{createTime},#{createUser},#{updateTime},#{updateUser},#{status})
     </insert>
+    <delete id="deleteByIds">
+        delete from dish where id in
+        <foreach collection="ids" open="(" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </delete>
 
     <select id="pageQuery" resultType="com.sky.vo.DishVO">
         SELECT
