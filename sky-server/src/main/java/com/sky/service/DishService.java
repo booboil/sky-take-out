@@ -33,5 +33,5 @@ public interface DishService {
      * @param id
      * @return
      */
-    DishVO getByIdWithFlavor(long id);
+    DishVO getByIdWithFlavor(Long id);
 }
