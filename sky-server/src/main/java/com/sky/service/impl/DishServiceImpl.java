@@ -120,8 +120,6 @@ public class DishServiceImpl implements DishService {
         DishVO dishVO = new DishVO();
         BeanUtils.copyProperties(dish,dishVO);
         dishVO.setFlavors(dishFlavors);
-
-
-        return null;
+        return dishVO;
     }
 }
