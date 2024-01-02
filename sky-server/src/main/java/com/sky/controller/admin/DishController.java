@@ -66,6 +66,8 @@ public class DishController {
      * @param dishDTO
      * @return
      */
+    @PutMapping
+    @ApiOperation("修改菜品")
     public Result update(@RequestBody DishDTO dishDTO) {
         log.info("修改菜品：{}",dishDTO);
         dishService.updateWithFlavor(dishDTO);
