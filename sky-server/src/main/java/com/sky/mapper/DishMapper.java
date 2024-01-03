@@ -49,7 +49,7 @@ public interface DishMapper {
      * 根据主键删除菜品
      * @param id
      */
-    @Delete("delete * from dish where id = #{id}}")
+    @Delete("delete * from dish where id = #{id}")
     void deleteById(Long id);
 
     /**

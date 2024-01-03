@@ -8,7 +8,6 @@ import com.sky.service.SetmealService;
 import com.sky.vo.SetmealVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -97,6 +96,5 @@ public class SetmealController {
         setmealService.staryOrStop(status,id);
         return Result.success();
     }
-
 
 }
