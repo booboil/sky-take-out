@@ -23,7 +23,7 @@ public class ShopController {
      * @param status
      * @return
      */
-    @PostMapping("/{status}")
+    @PutMapping("/{status}")
     @ApiOperation("设置店铺营业状态")
     public Result setSatus(@PathVariable Integer status) {
         log.info("设置店铺营业状态:{}",status == 1 ? "营业中" : "打烊中");
