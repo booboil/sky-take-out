@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class ShopController {
 
+    public static final String KEY = "SHOP_STATUS";
+
     @Autowired
     private RedisTemplate redisTemplate;
 
@@ -25,7 +27,7 @@ public class ShopController {
     @ApiOperation("获取店铺的营业状态")
     public Result<Integer> getStatus() {
         // 强制转换 （Object -》 Integer）
-        Integer status = (Integer) redisTemplate.opsForValue().get("SHOP_STATUS");
+        Integer status = (Integer) redisTemplate.opsForValue().get(KEY);
         log.info("获取店铺的营业状态为：{}",status == 1 ? "营业中" : "打烊中");
         return Result.success(status);
     }
