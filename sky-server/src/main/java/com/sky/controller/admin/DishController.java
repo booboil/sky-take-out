@@ -27,15 +27,10 @@ public class DishController {
 
     @Autowired
     private DishService dishService;
-
     @Autowired
     private RedisTemplate redisTemplate;
 
-    /**
-     * 新增菜品
-     * @param dishDTO
-     * @return
-     */
+
     @PostMapping
     @ApiOperation("新增菜品")
     public Result save(@RequestBody DishDTO dishDTO) {
@@ -75,11 +70,6 @@ public class DishController {
         return Result.success(dishVO);
     }
 
-    /**
-     * 修改菜品
-     * @param dishDTO
-     * @return
-     */
     @PutMapping
     @ApiOperation("修改菜品")
     public Result update(@RequestBody DishDTO dishDTO) {
