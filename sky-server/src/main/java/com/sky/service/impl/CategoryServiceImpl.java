@@ -112,6 +112,10 @@ public class CategoryServiceImpl implements CategoryService {
      * @param id
      */
     public void startOrStop(Integer status, Long id) {
+//        Category category = new Category();
+//        category.setId(id);
+//        category.setStatus(status);
+
         Category category = Category.builder()
                 .id(id)
                 .status(status)

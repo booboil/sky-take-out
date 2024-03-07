@@ -21,7 +21,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/admin/dish")
-@Api(tags = "菜品相关接口")
+@Api(tags = "菜品管理")
 @Slf4j
 public class DishController {
 
