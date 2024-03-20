@@ -32,7 +32,7 @@ public class DishVO implements Serializable {
     private Integer status;
     //更新时间
     private LocalDateTime updateTime;
-    //分类名称
+    //分类名称 （在category数据库中是name,需在sql中转换）
     private String categoryName;
     //菜品关联的口味
     private List<DishFlavor> flavors = new ArrayList<>();
