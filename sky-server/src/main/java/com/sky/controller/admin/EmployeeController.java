@@ -21,13 +21,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 员工管理
- */
+
 @RestController
 @RequestMapping("/admin/employee")
 @Slf4j
-@Api(tags = "员工相关接口")
+@Api(tags = "员工管理")
 public class EmployeeController {
 
     @Autowired

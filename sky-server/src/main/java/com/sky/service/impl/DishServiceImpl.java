@@ -56,6 +56,7 @@ public class DishServiceImpl implements DishService {
         //获取insert语句生成的主键值 (由于口味dishId不能获取，需要将主键id传进去)
         Long dishId = dish.getId();
 
+        // 口味信息获取
         List<DishFlavor> flavors = dishDTO.getFlavors();
         if (flavors != null && flavors.size() > 0) {
             flavors.forEach(dishFlavor -> {
@@ -175,6 +176,7 @@ public class DishServiceImpl implements DishService {
             // 如果是停售操作， 还需要将包含当前菜品的套餐也停售
             List<Long> dishIds = new ArrayList<>();
             dishIds.add(id);
+
             // select setmeal_id from setmeal_dish where dish_id in(?,?,?)
             List<Long> setmealIds = setmealDishMapper.getSetmealIdsByDishIds(dishIds);
             if (setmealIds != null && setmealIds.size() > 0) {
@@ -191,7 +193,7 @@ public class DishServiceImpl implements DishService {
     }
 
     /**
-     * 根据分类id查询菜品
+     * 根据分类id查询菜品(菜品名称模糊查询)
      * @param categoryId
      * @return
      */
