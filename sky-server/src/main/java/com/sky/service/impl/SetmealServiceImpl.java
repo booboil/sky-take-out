@@ -116,7 +116,9 @@ public class SetmealServiceImpl implements SetmealService {
      */
     @Override
     public SetmealVO getByIdWithDish(Long id) {
+        // 查询套餐
         Setmeal setmeal = setmealMapper.getById(id);
+        // 查询套餐菜品
         List<SetmealDish> setmealDishes = setmealDishMapper.getBySetmealId(id);
         SetmealVO setmealVO = new SetmealVO();
         BeanUtils.copyProperties(setmeal,setmealVO);
@@ -167,7 +169,7 @@ public class SetmealServiceImpl implements SetmealService {
         if (status == StatusConstant.ENABLE) {
             //select a.* from dish a left join setmeal_dish b on a.id = b.dish_id where b.setmeal_id = ?
             List<Dish> dishList = dishMapper.getBySetmealId(id);
-            if (dishList != null && dishList.size() > 0) {
+            if (dishList  != null &&dishList.size() > 0) {
                 for (Dish dish : dishList) {
                     if (StatusConstant.DISABLE == dish.getStatus()) {
                         throw new SetmealEnableFailedException(MessageConstant.SETMEAL_ENABLE_FAILED);

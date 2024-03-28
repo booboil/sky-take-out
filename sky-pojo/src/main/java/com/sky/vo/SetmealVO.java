@@ -40,7 +40,7 @@ public class SetmealVO implements Serializable {
     //更新时间
     private LocalDateTime updateTime;
 
-    //分类名称
+    //分类名称 （数据库为name）
     private String categoryName;
 
     //套餐和菜品的关联关系
